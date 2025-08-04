@@ -14,6 +14,10 @@ class="center">
 </p> 
 
 ---
+
+### The complete U3D framework will be publicly available after the paper is accepted.
+
+
 ## Abstract
 Low-light conditions significantly degrade Unmanned Aerial Vehicles (UAVs) performance in critical applications. Existing Low-light Image Enhancement (LIE) methods struggle with the unique challenges of aerial imagery, including Ultra-High Resolution (UHR), lack of paired data, severe non-uniform illumination, and deployment constraints. To address these issues, we propose three key contributions. First, we present **U3D**, the first unsupervised UHR UAV dataset for LIE, with a unified evaluation toolkit. Second, we introduce the **Edge Efficiency Index (EEI)**, a novel metric balancing perceptual quality with key deployment factors: speed, resolution, model complexity, and memory footprint. Third, we develop **U3LIE**, an efficient framework with two training-only designs—Adaptive Pre-enhancement Augmentation (APA) for input normalization and a Luminance Interval Loss ($\mathcal{L}_{int}$) for exposure control. U3LIE achieves SOTA results, processing 4K images at 23.8 FPS on a single GPU, making it ideal for real-time on-board deployment.
 
