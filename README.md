@@ -4,6 +4,10 @@ This is the official PyTorch implementation of the paper: <br/>
 > **Unsupervised Ultra-High-Resolution UAV Low-Light Image Enhancement: A Benchmark, Metric and Framework**
 >
 >
+
+### The complete U3D framework will be publicly available after the paper is accepted.
+
+
 ---
 
 <p align="center"> 
@@ -14,8 +18,6 @@ class="center">
 </p> 
 
 ---
-
-### The complete U3D framework will be publicly available after the paper is accepted.
 
 
 ## Abstract
