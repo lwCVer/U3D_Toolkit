@@ -73,8 +73,6 @@ cd U3LIE
 
 # Get Started
 ## 1. Dataset Preparation
-The dataset can be downloaded at [Baidu netdisk](https://pan.baidu.com/s/1Wg3u7V8AOVfgqkaw1n3lEg?pwd=CV21)(Password: CV21) or [Github](https://github.com/lwCVer/RRSHID/releases/download/dataset/RRSHID.zip) or [Hugging Face](https://huggingface.co/datasets/lwCVer/RRSHID/blob/main/RRSHID.zip) or [Google Drive](https://drive.google.com/file/d/1uBwHM8tyw69xafFHd01vMERs3TadUmxT/view?usp=drive_link).
-
 Download the U3D dataset from the link provided above and organize it as follows:
 
 ```shell
