@@ -5,7 +5,7 @@ This is the official PyTorch implementation of the paper: <br/>
 >
 >
 
-### The complete U3D framework will be publicly available after the paper is accepted.
+### The complete U3D toolkit will be publicly available after the paper is accepted.
 
 
 ---
