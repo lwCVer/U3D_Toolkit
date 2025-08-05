@@ -5,6 +5,40 @@ This is the official PyTorch implementation of the paper: <br/>
 >
 >
 
+```shell
+├── main.py                 # Main entry point, handles argument parsing and calls the training/testing pipeline
+├── trainer.py              # Contains core logic functions like train, validate, and test
+├── config.py               # Handles configuration settings and argument parsing
+├── dataloader.py           # Data loading and preprocessing pipeline
+├── eei_calculator.py       # Evaluation metrics calculator
+├── utils.py                # General utility functions (e.g., logging, checkpoint saving)
+|
+├── models/
+│   ├── __init__.py         # Makes 'models' a package and handles model registration
+│   ├── base_model.py       # (Optional) Defines a base class for all models
+│   └── dce_net.py          # Implementation of the DCE-Net model
+│   └── ...                 # Implementation of the other model
+│   └── another_model.py    # (Example for easily adding new models)
+|
+├── losses/
+│   ├── __init__.py         # Makes 'losses' a package and handles loss registration
+│   ├── base_loss.py        # Defines a base class for combined loss functions
+│   └── dce_loss.py         # Implementation of the DCE loss combination
+│   └── u3lie_loss.py       # Implementation of the u3lie loss combination
+│   └── ...                 # Implementation of the other loss
+│   └── another_loss.py     # (Example for easily adding new loss functions)
+|
+├── augmentations/
+│   ├── __init__.py         # Makes 'augmentations' a package
+│   └── apa.py              # Implementation of the APA module
+│   └── another_aug.py     # (Example for easily adding new augmentations functions)
+|
+└── factories/
+    ├── __init__.py         # Makes 'factories' a package
+    ├── model_factory.py    # Factory for creating model instances by name
+    └── loss_factory.py     # Factory for creating loss function instances by name
+```
+
 ### The complete U3D toolkit will be publicly available after the paper is accepted.
 
 
@@ -39,11 +73,10 @@ U3LIE achieves a new state-of-the-art balance between enhancement quality and ef
 
 | Method | Type | PI $\downarrow$ | EEI $\downarrow$ | FPS (4K) $\uparrow$ | Configs | Download |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **U3LIE (Ours)** | **Uns** | **17.11** | **16.03** | **23.80** | [u3lie_config.py](./configs/u3lie.py) | **[Model]** |
+| **U3LIE (Ours)** | **Uns** | **17.11** | **16.03** | **23.80** | [u3lie_config.py](./configs/u3lie.py) | **[Model](./weights/u3lie)** |
 | DCE++ | Uns | 20.82 | 56.39 | 7.68 | - | - |
 | RUAS | Uns | 21.73 | 57.91 | 7.64 | - | - |
 | CycleGAN | Unp | 5.76 | 120.74 | 1.38 | - | - |
-| MobileIE | Sup | 22.99 | 20.50 | 26.95 | - | - |
 
 ### Visual Results
 <p align="center"> 
@@ -77,15 +110,13 @@ Download the U3D dataset from the link provided above and organize it as follows
 
 ```shell
 U3D/
-├── train/
-│   ├── low/      (800 low-light images)
-│   └── normal/   (800 normal-light images) (optional)
-├── val/
-│   ├── low/      (100 low-light images)
-│   └── normal/   (100 normal-light images) (optional)
-└── test/
-    ├── low/      (100 low-light images)
-    └── normal/   (100 normal-light images) (optional)
+├── lowlight/
+│   ├── train/      (800 low-light images)
+│   └── val/        (100 low-light images) 
+│   └── test/       (100 low-light images) 
+├── light/                                      (optional)
+│   ├── train/      (800 normal-light images)
+│   └── test/       (200 normal-light images)
 ```
 
 # 2. Evaluation
